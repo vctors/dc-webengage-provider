@@ -1,19 +1,33 @@
 import WebEngage from "react-native-webengage";
+import { formatEventData } from "./helpers";
 
 
 export default class WebEngageProvider {
-    webEngage: any;
+    private static instance: WebEngageProvider;
+    private webEngage: any;
 
     constructor() {
         this.webEngage = new WebEngage();
     }
-
+    public instantiateClient() {
+        this.webEngage = new WebEngage();
+    }
+    public static getInstance() {
+        if (!WebEngageProvider.instance) {
+            WebEngageProvider.instance = new WebEngageProvider();
+            return WebEngageProvider.instance;
+        }
+        return WebEngageProvider.instance;
+    }
     public login(userId: string) {
         this.webEngage.user.login(userId);
 
     }
     public logout() {
         this.webEngage.user.logout();
+    }
+    public update(data: any) {
+        this.sendUserContext(data);
     }
     public sendUserContext(data: any, nested = false, constructedObject: any = undefined) {
         const allowed: any = ["first_name", "last_name", "phone", "mobile", "ecommerce_id", "subject_id", "creation_date"];
@@ -56,6 +70,10 @@ export default class WebEngageProvider {
             }
         };
         return object;
+    }
+    public sendEvent(eventName: string, eventData: any) {
+        const formattedEventData = formatEventData(eventData);
+        this.webEngage.track(eventName, formattedEventData);
     }
 
 
