@@ -1,16 +1,20 @@
 import WebEngage from "react-native-webengage";
 import { formatEventData } from "./helpers";
+import mapper, { IProviderMapper } from "./interfaces/mapper";
+import IProvider from "./interfaces/Provider";
+import { WebEngageMapper } from "./mappers/webEngage";
 
 
-export default class WebEngageProvider {
+export default class WebEngageProvider implements IProvider<typeof WebEngage> {
     private static instance: WebEngageProvider;
-    private webEngage: any;
+    public sdkInstance: any;
 
     constructor() {
-        this.webEngage = new WebEngage();
+        this.sdkInstance = new WebEngage();
     }
+    mapper: IProviderMapper = new WebEngageMapper;
     public instantiateClient() {
-        this.webEngage = new WebEngage();
+        this.sdkInstance = new WebEngage();
     }
     public static getInstance() {
         if (!WebEngageProvider.instance) {
@@ -20,11 +24,11 @@ export default class WebEngageProvider {
         return WebEngageProvider.instance;
     }
     public login(userId: string) {
-        this.webEngage.user.login(userId);
+        this.sdkInstance.user.login(userId);
 
     }
     public logout() {
-        this.webEngage.user.logout();
+        this.sdkInstance.user.logout();
     }
     public update(data: any) {
         this.sendUserContext(data);
@@ -39,31 +43,31 @@ export default class WebEngageProvider {
                 switch (entryKey) {
                     case "email":
                         console.log("we-email", data[entryKey]);
-                        allowed.includes(entryKey) ? this.webEngage.user.setEmail(data[entryKey]) : "";
+                        allowed.includes(entryKey) ? this.sdkInstance.user.setEmail(data[entryKey]) : "";
                         break;
                     case "phone":
                         console.log("we-phone", data[entryKey]);
-                        allowed.includes(entryKey) ? this.webEngage.user.setPhone(data[entryKey]) : "";
+                        allowed.includes(entryKey) ? this.sdkInstance.user.setPhone(data[entryKey]) : "";
                         break;
                     case "mobile":
                         console.log("we-mobile", data[entryKey]);
-                        allowed.includes(entryKey) ? this.webEngage.user.setPhone(data[entryKey]) : "";
+                        allowed.includes(entryKey) ? this.sdkInstance.user.setPhone(data[entryKey]) : "";
                         break;
                     case "first_name":
                         console.log("we-first_name", data[entryKey]);
-                        allowed.includes(entryKey) ? this.webEngage.user.setFirstName(data[entryKey]) : "";
+                        allowed.includes(entryKey) ? this.sdkInstance.user.setFirstName(data[entryKey]) : "";
                         break;
                     case "last_name":
                         console.log('we-last_name', data[entryKey]);
-                        allowed.includes(entryKey) ? this.webEngage.user.setLastName(data[entryKey]) : "";
+                        allowed.includes(entryKey) ? this.sdkInstance.user.setLastName(data[entryKey]) : "";
                         break;
                     case "company":
                         console.log("we-company", data[entryKey]);
-                        allowed.includes(entryKey) ? this.webEngage.user.setLastName(data[entryKey]) : "";
+                        allowed.includes(entryKey) ? this.sdkInstance.user.setLastName(data[entryKey]) : "";
                         break;
                     default:
                         object = allowed.includes(entryKey) ? { ...object, [entryKey]: data[entryKey] } : object
-                        data[entryKey] ? this.webEngage.user.setAttribute(entryKey, data[entryKey]) : "";
+                        data[entryKey] ? this.sdkInstance.user.setAttribute(entryKey, data[entryKey]) : "";
                         break;
                 }
                 continue;
@@ -72,8 +76,7 @@ export default class WebEngageProvider {
         return object;
     }
     public sendEvent(eventName: string, eventData: any) {
-        const formattedEventData = formatEventData(eventData);
-        this.webEngage.track(eventName, formattedEventData);
+        Object.keys(this.mapper).includes(eventName) ? this.mapper.eventMapper[eventName as keyof mapper](eventData, this.sdkInstance) : "";
     }
 
 
