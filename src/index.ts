@@ -76,7 +76,7 @@ export default class WebEngageProvider implements IProvider<typeof WebEngage> {
         return object;
     }
     public sendEvent(eventName: string, eventData: any) {
-        Object.keys(this.mapper).includes(eventName) ? this.mapper.eventMapper[eventName as keyof mapper](eventData, this.sdkInstance) : "";
+        Object.keys(this.mapper.eventMapper).includes(eventName) ? this.mapper.eventMapper[eventName as keyof mapper](eventData, this.sdkInstance) : "";
     }
 
 
