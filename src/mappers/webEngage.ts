@@ -23,7 +23,7 @@ export class WebEngageMapper implements IProviderMapper {
                 "Product Id": data.product_id,
                 "Event_time": data.event_time,
                 "User_ID": data.user_id,
-                "Storefront_ID": data.storefront_id,
+                "storefront_id": data.storefront_id,
                 "Product Name": data.product_name,
                 "Category Name": data.category_name,
                 "Category Id": data.category_id,
@@ -44,7 +44,7 @@ export class WebEngageMapper implements IProviderMapper {
                 "Product Id": data.product_id,
                 "Event_time": data.event_time,
                 "User_ID": data.user_id,
-                "Storefront_ID": data.storefront_id,
+                "storefront_id": data.storefront_id,
                 "Product Name": data.product_name,
                 "Category Name": data.category_name,
                 "Category Id": data.category_id,
@@ -94,49 +94,49 @@ export class WebEngageMapper implements IProviderMapper {
             sdkInstance.track("Shipping Details Updated", data);
         },
         selectHomeBanner: function (data: { banner_id: number; }, sdkInstance: any): void {
-            throw new Error("Function not implemented.");
+
         },
         selectHomeHotlink: function (data: { user_id: number; hotlink_id: number; }, sdkInstance: any): void {
-            throw new Error("Function not implemented.");
+
         },
         viewHomeNewProducts: function (data: { user_id: number; }, sdkInstance: any): void {
-            throw new Error("Function not implemented.");
+
         },
         selectHomeNewProduct: function (data: { user_id: number; product_id: number; }, sdkInstance: any): void {
-            throw new Error("Function not implemented.");
+
         },
         viewNewProduct: function (data: { product_id: number; section_name: string; }, sdkInstance: any): void {
-            throw new Error("Function not implemented.");
+
         },
         selectHomeOnSaleProduct: function (data: { user_id: number; product_id: number; }, sdkInstance: any): void {
-            throw new Error("Function not implemented.");
+
         },
         viewOnSale: function (data: { user_id: number; }, sdkInstance: any): void {
-            throw new Error("Function not implemented.");
+
         },
         viewHomePromotions: function (data: { user_id: number; }, sdkInstance: any): void {
-            throw new Error("Function not implemented.");
+
         },
         selectHomePromotion: function (data: { user_id: number; promotion_id: number; }, sdkInstance: any): void {
-            throw new Error("Function not implemented.");
+
         },
         selectPromotion: function (data: { user_id: number; promotion_id: number; }, sdkInstance: any): void {
-            throw new Error("Function not implemented.");
+
         },
         viewHomeVendors: function (data: { user_id: number; }, sdkInstance: any): void {
-            throw new Error("Function not implemented.");
+
         },
         viewHomeBestSellers: function (data: { user_id: number; }, sdkInstance: any): void {
-            throw new Error("Function not implemented.");
+
         },
         viewHomeBrands: function (data: { user_id: number; }, sdkInstance: any): void {
-            throw new Error("Function not implemented.");
+
         },
         selectHomeBrand: function (data: { user_id: number; brand_id: number; }, sdkInstance: any): void {
-            throw new Error("Function not implemented.");
+
         },
         selectHomeVendor: function (data: { user_id: number; vendor_id: number; }, sdkInstance: any): void {
-            throw new Error("Function not implemented.");
+
         }
     }
 

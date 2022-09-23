@@ -7,5 +7,6 @@ export default interface IProvider<sdkInstanceType> {
     login: (userId: string) => any,
     logout: () => any,
     update: (data: any) => any,
+    sendEvent: (eventName: string, eventData: any) => any,
     mapper: IProviderMapper,
 }

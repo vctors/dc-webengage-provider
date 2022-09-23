@@ -34,7 +34,7 @@ export default class WebEngageProvider implements IProvider<typeof WebEngage> {
         this.sendUserContext(data);
     }
     public sendUserContext(data: any, nested = false, constructedObject: any = undefined) {
-        const allowed: any = ["first_name", "last_name", "phone", "mobile", "ecommerce_id", "subject_id", "creation_date", "email", "company"];
+        const allowed: string[] = ["first_name", "last_name", "phone", "mobile", "ecommerce_id", "subject_id", "creation_date", "email", "company"];
         let object = constructedObject != undefined ? constructedObject : {};
         for (let entryKey in data) {
             if (typeof data[entryKey] == "object" && data[entryKey] != null) {
