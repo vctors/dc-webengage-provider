@@ -24,7 +24,7 @@ class WebEngageMapper {
                     "Product Id": data.product_id,
                     "Event_time": data.event_time,
                     "User_ID": data.user_id,
-                    "Storefront_ID": data.storefront_id,
+                    "storefront_id": data.storefront_id,
                     "Product Name": data.product_name,
                     "Category Name": data.category_name,
                     "Category Id": data.category_id,
@@ -45,7 +45,7 @@ class WebEngageMapper {
                     "Product Id": data.product_id,
                     "Event_time": data.event_time,
                     "User_ID": data.user_id,
-                    "Storefront_ID": data.storefront_id,
+                    "storefront_id": data.storefront_id,
                     "Product Name": data.product_name,
                     "Category Name": data.category_name,
                     "Category Id": data.category_id,
@@ -95,49 +95,34 @@ class WebEngageMapper {
                 sdkInstance.track("Shipping Details Updated", data);
             },
             selectHomeBanner: function (data, sdkInstance) {
-                throw new Error("Function not implemented.");
             },
             selectHomeHotlink: function (data, sdkInstance) {
-                throw new Error("Function not implemented.");
             },
             viewHomeNewProducts: function (data, sdkInstance) {
-                throw new Error("Function not implemented.");
             },
             selectHomeNewProduct: function (data, sdkInstance) {
-                throw new Error("Function not implemented.");
             },
             viewNewProduct: function (data, sdkInstance) {
-                throw new Error("Function not implemented.");
             },
             selectHomeOnSaleProduct: function (data, sdkInstance) {
-                throw new Error("Function not implemented.");
             },
             viewOnSale: function (data, sdkInstance) {
-                throw new Error("Function not implemented.");
             },
             viewHomePromotions: function (data, sdkInstance) {
-                throw new Error("Function not implemented.");
             },
             selectHomePromotion: function (data, sdkInstance) {
-                throw new Error("Function not implemented.");
             },
             selectPromotion: function (data, sdkInstance) {
-                throw new Error("Function not implemented.");
             },
             viewHomeVendors: function (data, sdkInstance) {
-                throw new Error("Function not implemented.");
             },
             viewHomeBestSellers: function (data, sdkInstance) {
-                throw new Error("Function not implemented.");
             },
             viewHomeBrands: function (data, sdkInstance) {
-                throw new Error("Function not implemented.");
             },
             selectHomeBrand: function (data, sdkInstance) {
-                throw new Error("Function not implemented.");
             },
             selectHomeVendor: function (data, sdkInstance) {
-                throw new Error("Function not implemented.");
             }
         };
     }
