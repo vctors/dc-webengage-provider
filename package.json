@@ -1,9 +1,8 @@
 {
   "name": "@dentacarts/dc-webengage-provider",
-  "version": "1.0.15",
+  "version": "1.0.18",
   "description": "A Simple WebEngage Provider",
   "main": "index.js",
-  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
@@ -23,6 +22,7 @@
   },
   "homepage": "https://github.com/dentacarts/dc-webengage-provider#readme",
   "dependencies": {
+    "firebase": "^9.10.0",
     "react-native-webengage": "^1.3.0"
   },
   "publishConfig": {
