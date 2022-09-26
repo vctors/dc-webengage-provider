@@ -1,9 +1,9 @@
 import WebEngage from "react-native-webengage";
-import { formatEventData } from "./helpers";
-import mapper, { IProviderMapper } from "./interfaces/mapper";
-import IProvider from "./interfaces/Provider";
-import { WebEngageMapper } from "./mappers/webEngage";
-import WebEngageWebProvider from "./providers/webEngage-web";
+import { formatEventData } from "../helpers";
+import mapper, { IProviderMapper } from "../interfaces/mapper";
+import IProvider from "../interfaces/Provider";
+import { WebEngageMapper } from "../mappers/webEngage";
+import WebEngageWebProvider from "../providers/webEngage-web";
 
 export default class WebEngageProvider implements IProvider<typeof WebEngage> {
     private static instance: WebEngageProvider;
@@ -78,6 +78,4 @@ export default class WebEngageProvider implements IProvider<typeof WebEngage> {
     public sendEvent(eventName: string, eventData: any) {
         Object.keys(this.mapper.eventMapper).includes(eventName) ? this.mapper.eventMapper[eventName as keyof mapper](eventData, this.sdkInstance) : "";
     }
-
-
 }

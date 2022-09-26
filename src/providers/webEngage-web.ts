@@ -1,38 +1,32 @@
-import WebEngage from "react-native-webengage";
-import { formatEventData } from "./helpers";
-import mapper, { IProviderMapper } from "./interfaces/mapper";
-import IProvider from "./interfaces/Provider";
-import { WebEngageMapper } from "./mappers/webEngage";
-import WebEngageWebProvider from "./providers/webEngage-web";
+import mapper, { IProviderMapper } from "../interfaces/mapper";
+import IProvider from "../interfaces/Provider";
+import { WebEngageMapper } from "../mappers/webEngage";
 
-export default class WebEngageProvider implements IProvider<typeof WebEngage> {
-    private static instance: WebEngageProvider;
-    public sdkInstance: any;
-
-    constructor() {
-        this.sdkInstance = new WebEngage();
-    }
+export default class WebEngageWebProvider implements IProvider<any>{
+    private static instance: WebEngageWebProvider;
+    sdkInstance: any;
     mapper: IProviderMapper = new WebEngageMapper();
-    public instantiateClient() {
-        this.sdkInstance = new WebEngage();
+    constructor(sdkObject: any) {
+        this.sdkInstance = sdkObject;
     }
-    public static getInstance() {
-        if (!WebEngageProvider.instance) {
-            WebEngageProvider.instance = new WebEngageProvider();
-            return WebEngageProvider.instance;
+    public static getInstance(sdkObject: any) {
+        if (!WebEngageWebProvider.instance) {
+            WebEngageWebProvider.instance = new WebEngageWebProvider(sdkObject)
         }
-        return WebEngageProvider.instance;
+        return WebEngageWebProvider.instance;
     }
+    public instantiateClient() {
+
+    };
     public login(userId: string) {
         this.sdkInstance.user.login(userId);
-
-    }
+    };
     public logout() {
         this.sdkInstance.user.logout();
-    }
+    };
     public update(data: any) {
         this.sendUserContext(data);
-    }
+    };
     public sendUserContext(data: any, nested = false, constructedObject: any = undefined) {
         const allowed: string[] = ["first_name", "last_name", "phone", "mobile", "ecommerce_id", "subject_id", "creation_date", "email", "company"];
         let object = constructedObject != undefined ? constructedObject : {};
@@ -43,27 +37,27 @@ export default class WebEngageProvider implements IProvider<typeof WebEngage> {
                 switch (entryKey) {
                     case "email":
                         console.log("we-email", data[entryKey]);
-                        allowed.includes(entryKey) ? this.sdkInstance.user.setEmail(data[entryKey]) : "";
+                        allowed.includes(entryKey) ? this.sdkInstance.user.setAttribute("we_email", data[entryKey]) : "";
                         break;
                     case "phone":
                         console.log("we-phone", data[entryKey]);
-                        allowed.includes(entryKey) ? this.sdkInstance.user.setPhone(data[entryKey]) : "";
+                        allowed.includes(entryKey) ? this.sdkInstance.user.setAttribute("we_phone", data[entryKey]) : "";
                         break;
                     case "mobile":
                         console.log("we-mobile", data[entryKey]);
-                        allowed.includes(entryKey) ? this.sdkInstance.user.setPhone(data[entryKey]) : "";
+                        allowed.includes(entryKey) ? this.sdkInstance.user.setAttribute("we_phone", data[entryKey]) : "";
                         break;
                     case "first_name":
                         console.log("we-first_name", data[entryKey]);
-                        allowed.includes(entryKey) ? this.sdkInstance.user.setFirstName(data[entryKey]) : "";
+                        allowed.includes(entryKey) ? this.sdkInstance.user.setAttribute("we_first_name", data[entryKey]) : "";
                         break;
                     case "last_name":
                         console.log('we-last_name', data[entryKey]);
-                        allowed.includes(entryKey) ? this.sdkInstance.user.setLastName(data[entryKey]) : "";
+                        allowed.includes(entryKey) ? this.sdkInstance.user.setAttribute("we_last_name", data[entryKey]) : "";
                         break;
                     case "company":
                         console.log("we-company", data[entryKey]);
-                        allowed.includes(entryKey) ? this.sdkInstance.user.setLastName(data[entryKey]) : "";
+                        allowed.includes(entryKey) ? this.sdkInstance.user.setAttribute("we_company", data[entryKey]) : "";
                         break;
                     default:
                         object = allowed.includes(entryKey) ? { ...object, [entryKey]: data[entryKey] } : object
@@ -75,9 +69,8 @@ export default class WebEngageProvider implements IProvider<typeof WebEngage> {
         };
         return object;
     }
-    public sendEvent(eventName: string, eventData: any) {
+    public sendEvent(eventName: any, eventData: any) {
         Object.keys(this.mapper.eventMapper).includes(eventName) ? this.mapper.eventMapper[eventName as keyof mapper](eventData, this.sdkInstance) : "";
-    }
-
+    };
 
 }
