@@ -40,7 +40,7 @@ export class WebEngageMapper implements IProviderMapper {
             })
         },
         removeFromCart: function (data: any, sdkInstance: any): void {
-            sdkInstance.track('Added To Wishlist', {
+            sdkInstance.track('Removed From Cart', {
                 "Product Id": data.product_id,
                 "Event_time": data.event_time,
                 "User_ID": data.user_id,
