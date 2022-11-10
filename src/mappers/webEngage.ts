@@ -76,10 +76,10 @@ export class WebEngageMapper implements IProviderMapper {
 
         },
         viewOnSale: function (data: { user_id: number; }, sdkInstance: any): void {
-
+            sdkInstance.track("On Sale Clicked", data);
         },
         viewHomePromotions: function (data: { user_id: number; }, sdkInstance: any): void {
-
+            sdkInstance.track("Promotions Clicked", data);
         },
         selectHomePromotion: function (data: { user_id: number; promotion_id: number; }, sdkInstance: any): void {
 
@@ -91,7 +91,7 @@ export class WebEngageMapper implements IProviderMapper {
 
         },
         viewHomeBestSellers: function (data: { user_id: number; }, sdkInstance: any): void {
-
+            sdkInstance.track("Best Sellers Clicked", data);
         },
         viewHomeBrands: function (data: { user_id: number; }, sdkInstance: any): void {
 
@@ -100,7 +100,7 @@ export class WebEngageMapper implements IProviderMapper {
 
         },
         selectHomeVendor: function (data: { user_id: number; vendor_id: number; }, sdkInstance: any): void {
-
+            sdkInstance.track("Vendor Viewed", data);
         }
     }
 
