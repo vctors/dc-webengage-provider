@@ -19,46 +19,10 @@ export class WebEngageMapper implements IProviderMapper {
             sdkInstance.track('Product Viewed', data)
         },
         addToCart: function (data: any, sdkInstance: any): void {
-            sdkInstance.track('Added To Cart', {
-                "Product Id": data.product_id,
-                "Event_time": data.event_time,
-                "User_ID": data.user_id,
-                "storefront_id": data.storefront_id,
-                "Product Name": data.product_name,
-                "Category Name": data.category_name,
-                "Category Id": data.category_id,
-                "Sub Category Name": data.category_name,
-                "Sub Category Id": data.category_id,
-                "Quantity": data.quantity,
-                "Brand": data.brand_id,
-                "Vendor": data.vendor_id,
-                "Retail Price": data.retail_price,
-                "Discount": data.discount,
-                "Price": data.price,
-                "Currency": data.currency,
-                "image": data.image
-            })
+            sdkInstance.track('Added To Cart', data)
         },
         removeFromCart: function (data: any, sdkInstance: any): void {
-            sdkInstance.track('Removed From Cart', {
-                "Product Id": data.product_id,
-                "Event_time": data.event_time,
-                "User_ID": data.user_id,
-                "storefront_id": data.storefront_id,
-                "Product Name": data.product_name,
-                "Category Name": data.category_name,
-                "Category Id": data.category_id,
-                "Sub Category Name": data.category_name,
-                "Sub Category Id": data.category_id,
-                "Quantity": data.quantity,
-                "Brand": data.brand_id,
-                "Vendor": data.vendor_id,
-                "Retail Price": data.retail_price,
-                "Discount": data.discount,
-                "Price": data.price,
-                "Currency": data.currency,
-                "image": data.image
-            })
+            sdkInstance.track('Removed From Cart', data)
         },
         addToWishlist: function (data: any, sdkInstance: any): void {
             sdkInstance.track('Added To Wishlist', data)
