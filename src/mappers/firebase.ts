@@ -11,20 +11,20 @@ export class firebaseMapper implements IProviderMapper {
         productSearched: function (data: { serch_keyword: "string"; item_count: number; }, sdkInstance: any): void {
 
         },
-        bannerClicked: function (data: { event_time: any; user_id: number; storefront_id: number; banner_id: number; }, sdkInstance: any): void {
+        bannerClicked: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'select_home_carousel', { banner_id: data.banner_id });
         },
-        productViewed: function (data: { product_id: string; event_time: any; storefront_id: number; product_name: string; category_name: string; category_id: number; sub_category_name: string; sub_category_id: number; brand: string; retail_price: number; discount: number; price: number; currency: any; image: any; subject_id?: string }, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'view_item', { user_id: data.subject_id || '', product_id: data.product_id })
+        productViewed: function (data: { product_id: string; event_time: any; storefront_id: number; product_name: string; category_name: string; category_id: number; sub_category_name: string; sub_category_id: number; brand: string; retail_price: number; discount: number; price: number; currency: any; image: any; subject_id?: string, platform_type: string }, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'view_item', data)
         },
         addToCart: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'add_to_cart', { user_id: data.subject_id || '', product_id: data.product_id })
+            logEvent(sdkInstance.analytics, 'add_to_cart', data)
         },
         removeFromCart: function (data: any, sdkInstance: any): void {
 
         },
         addToWishlist: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'add_to_wishlist', { user_id: data.subject_id || '', product_id: data.product_id })
+            logEvent(sdkInstance.analytics, 'add_to_wishlist', data)
         },
         viewCategory: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'view_category', data)
@@ -35,14 +35,14 @@ export class firebaseMapper implements IProviderMapper {
         updateCart: function (data: any, sdkInstance: any): void {
         },
         applyCoupon: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'apply_promo', { user_id: data?.subject_id || '', promo_code: data?.promo_code })
+            logEvent(sdkInstance.analytics, 'apply_promo', data)
         },
         couponFailed: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'remove_promo', { user_id: data?.subject_id || '', promo_code: data?.promo_code })
+            logEvent(sdkInstance.analytics, 'remove_promo', data)
 
         },
         viewCart: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'view_cart', { user_id: data?.subject_id || '' })
+            logEvent(sdkInstance.analytics, 'view_cart', data)
         },
         startCheckout: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'begin_checkout', data)
@@ -53,55 +53,55 @@ export class firebaseMapper implements IProviderMapper {
         reportFailedPayment: function (data: any, sdkInstance: any): void {
         },
         changeAddress: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'chekout_change_address', { user_id: data?.subject_id || '' })
+            logEvent(sdkInstance.analytics, 'chekout_change_address', data)
 
         },
-        selectHomeBanner: function (data: { banner_id: number; user_id?: any }, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, "select_home_carousel", { user_id: data?.user_id || "", banner_id: data?.banner_id })
+        selectHomeBanner: function (data: { banner_id: number; user_id?: any; platform_type: string }, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, "select_home_carousel", data)
         },
-        selectHomeHotlink: function (data: { user_id: number; hotlink_id: number; }, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'select_home_hotlink', { user_id: data?.user_id || "", hotlink_id: data?.hotlink_id })
+        selectHomeHotlink: function (data: { user_id: number; hotlink_id: number; platform_type: string }, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'select_home_hotlink', data)
         },
-        viewHomeNewProducts: function (data: { user_id: number; }, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'view_NP', { user_id: data?.user_id || "" })
+        viewHomeNewProducts: function (data: { user_id: number; platform_type: string }, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'view_NP', data)
         },
-        selectHomeNewProduct: function (data: { user_id: number; product_id: number; }, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'select_home_NP', { user_id: data?.user_id, product_id: data?.product_id })
+        selectHomeNewProduct: function (data: { user_id: number; product_id: number; platform_type: string }, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'select_home_NP', data)
 
         },
-        viewNewProduct: function (data: { product_id: number; section_name: string; subject_id?: string }, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'select_NP', { user_id: data?.subject_id || '', product_id: data.product_id })
+        viewNewProduct: function (data: { product_id: number; section_name: string; subject_id?: string; platform_type: string }, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'select_NP', data)
         },
-        selectHomeOnSaleProduct: function (data: { user_id: number; product_id: number; subject_id?: string }, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'select_home_onsale', { user_id: data?.subject_id || '', product_id: data.product_id })
+        selectHomeOnSaleProduct: function (data: { user_id: number; product_id: number; subject_id?: string; platform_type: string }, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'select_home_onsale', data)
         },
-        viewOnSale: function (data: { user_id: number; }, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'view_onsale', { user_id: data?.user_id || "" })
+        viewOnSale: function (data: { user_id: number; platform_type: string }, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'view_onsale', data)
         },
-        viewHomePromotions: function (data: { user_id: number; }, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'view_promotions', { user_id: data?.user_id || "" })
+        viewHomePromotions: function (data: { user_id: number; platform_type: string }, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'view_promotions', data)
         },
-        selectHomePromotion: function (data: { user_id: number; promotion_id: number; }, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'select_home_promo', { user_id: data?.user_id, promotion_id: data?.promotion_id })
+        selectHomePromotion: function (data: { user_id: number; promotion_id: number; platform_type: string }, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'select_home_promo', data)
         },
-        selectPromotion: function (data: { user_id: number; promotion_id: number; subject_id?: string, }, sdkInstance: any): void {
+        selectPromotion: function (data: { user_id: number; promotion_id: number; subject_id?: string; platform_type: string }, sdkInstance: any): void {
             //@ts-ignore
-            logEvent(sdkInstance.analytics, 'select_promotion', { user_id: data?.subject_id || '', promotion_id: data?.promotion_id })
+            logEvent(sdkInstance.analytics, 'select_promotion', data)
         },
-        viewHomeVendors: function (data: { user_id: number; }, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'view_vendors', { user_id: data?.user_id })
+        viewHomeVendors: function (data: { user_id: number; platform_type: string }, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'view_vendors', data)
         },
-        viewHomeBestSellers: function (data: { user_id: number; }, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'View_Bestsellers', { user_id: data?.user_id })
+        viewHomeBestSellers: function (data: { user_id: number; platform_type: string }, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'View_Bestsellers', data)
         },
-        viewHomeBrands: function (data: { user_id: number; }, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'view_brands', { user_id: data?.user_id })
+        viewHomeBrands: function (data: { user_id: number; platform_type: string }, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'view_brands', data)
         },
-        selectHomeBrand: function (data: { user_id: number; brand_id: number; }, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'select_home_brand', { user_id: data.user_id, brand_id: data.brand_id })
+        selectHomeBrand: function (data: { user_id: number; brand_id: number; platform_type: string }, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'select_home_brand', data)
         },
-        selectHomeVendor: function (data: { user_id: number; vendor_id: number; }, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'select_home_vendor', { user_id: data?.user_id, vendor_id: data?.vendor_id })
+        selectHomeVendor: function (data: { user_id: number; vendor_id: number; platform_type: string }, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'select_home_vendor', data)
         },
         //Rest of Firebase
         filterProducts: function (data: any, sdkInstance: any): void {
