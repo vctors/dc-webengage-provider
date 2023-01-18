@@ -89,7 +89,13 @@ export default interface IEventMapper {
     fullSearch: (data: any, sdkInstance: any) => void,
     profileUpdated: (data: any, sdkInstance: any) => void,
     claimCode: (data: any, sdkInstance: any) => void,
-    skipCongratsBanner: (data: any, sdkInstance: any) => void
+    skipCongratsBanner: (data: any, sdkInstance: any) => void,
+    buildYourClinicAddName: (data: any, sdkInstance: any) => void
+    buildYourClinicAddMobile: (data: any, sdkInstance: any) => void
+    buildYourClinicSelectRoom: (data: any, sdkInstance: any) => void
+    buildYourClinicSelectBudget: (data: any, sdkInstance: any) => void
+    buildYourClinicSelectTimeslot: (data: any, sdkInstance: any) => void
+    buildYourClinicSubmitRequest: (data: any, sdkInstance: any) => void
 }
 export interface IProviderMapper {
     eventMapper: IEventMapper,
