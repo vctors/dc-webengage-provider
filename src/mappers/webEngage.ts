@@ -94,175 +94,136 @@ export class WebEngageMapper implements IProviderMapper {
         },
         //Firebase Events
         filterProducts: function (data: any, sdkInstance: any): void {
-            
         },
         sortProducts: function (data: any, sdkInstance: any): void {
-            
         },
         selectVendor: function (data: any, sdkInstance: any): void {
-            
         },
         selectVariant: function (data: any, sdkInstance: any): void {
-            
         },
         incrementQty: function (data: any, sdkInstance: any): void {
-            
         },
         decrementQty: function (data: any, sdkInstance: any): void {
-            
         },
         deleteProduct: function (data: any, sdkInstance: any): void {
-            
         },
         chekoutAddAddress: function (data: any, sdkInstance: any): void {
-            
         },
         checkoutVerifyAddress: function (data: any, sdkInstance: any): void {
-            
         },
         selectPaymentMethod: function (data: any, sdkInstance: any): void {
-            
         },
         viewSupport: function (data: any, sdkInstance: any): void {
-            
         },
         selectWhatsapp: function (data: any, sdkInstance: any): void {
-            
         },
         selectPhone: function (data: any, sdkInstance: any): void {
-            
         },
         selectIntercom: function (data: any, sdkInstance: any): void {
-            
         },
         viewAccountSettings: function (data: any, sdkInstance: any): void {
-            
         },
         viewAddressBook: function (data: any, sdkInstance: any): void {
-            
         },
         saveNewAddress: function (data: any, sdkInstance: any): void {
-            
         },
         skipOTP: function (data: any, sdkInstance: any): void {
-            
         },
         resendOTP: function (data: any, sdkInstance: any): void {
-            
         },
         confirmOTP: function (data: any, sdkInstance: any): void {
-            
         },
         verifyAddress: function (data: any, sdkInstance: any): void {
-            
         },
         setDefaultAddress: function (data: any, sdkInstance: any): void {
-            
         },
         selectWishlist: function (data: any, sdkInstance: any): void {
-            
         },
         moveToCart: function (data: any, sdkInstance: any): void {
-            
         },
         removeWishlistedProduct: function (data: any, sdkInstance: any): void {
-            
         },
         clearWishlist: function (data: any, sdkInstance: any): void {
-            
         },
         editProfile: function (data: any, sdkInstance: any): void {
-            
         },
         addProfileSpeciality: function (data: any, sdkInstance: any): void {
-            
         },
         addProfileExpirience: function (data: any, sdkInstance: any): void {
-            
         },
         addProfileDN: function (data: any, sdkInstance: any): void {
-            
         },
         addProfileOccupation: function (data: any, sdkInstance: any): void {
-            
         },
         saveProfile: function (data: any, sdkInstance: any): void {
-            
         },
         selectCurrency: function (data: any, sdkInstance: any): void {
-            
         },
         userSignOut: function (data: any, sdkInstance: any): void {
-            
         },
         selectBestseller: function (data: any, sdkInstance: any): void {
-            
         },
         selectRewards: function (data: any, sdkInstance: any): void {
-            
         },
         selectBrand: function (data: any, sdkInstance: any): void {
-            
         },
         addWishlistToCart: function (data: any, sdkInstance: any): void {
-            
         },
         incrementWishlistItem: function (data: any, sdkInstance: any): void {
-            
         },
         decrementWishlistItem: function (data: any, sdkInstance: any): void {
-            
         },
         addFavToCart: function (data: any, sdkInstance: any): void {
-            
         },
         incrementFavItem: function (data: any, sdkInstance: any): void {
-            
         },
         viewFDCBanner: function (data: any, sdkInstance: any): void {
-            
         },
         signInClick: function (data: any, sdkInstance: any): void {
-            
         },
         signInAction: function (data: any, sdkInstance: any): void {
-            
         },
         signOutAction: function (data: any, sdkInstance: any): void {
-            
         },
         viewBuyAgain: function (data: any, sdkInstance: any): void {
-            
         },
         viewUserChallenge: function (data: any, sdkInstance: any): void {
-            
         },
         reedemPoints: function (data: any, sdkInstance: any): void {
-            
         },
         cancelReedemPoints: function (data: any, sdkInstance: any): void {
-            
         },
         orderHelp: function (data: any, sdkInstance: any): void {
-            
         },
         trackOrder: function (data: any, sdkInstance: any): void {
-            
         },
         inlineSearch: function (data: any, sdkInstance: any): void {
-            
         },
         fullSearch: function (data: any, sdkInstance: any): void {
-            
         },
         profileUpdated: function (data: any, sdkInstance: any): void {
-            
         },
         claimCode: function (data: any, sdkInstance: any): void {
-            
         },
         skipCongratsBanner: function (data: any, sdkInstance: any): void {
-            
+        },
+        buildYourClinicAddName: function (data: any, sdkInstance: any): void {
+            sdkInstance.track("BYC_Add_name", data);
+        },
+        buildYourClinicAddMobile: function (data: any, sdkInstance: any): void {
+            sdkInstance.track("BYC_Add_mobile", data);
+        },
+        buildYourClinicSelectRoom: function (data: any, sdkInstance: any): void {
+            sdkInstance.track("BYC_Select_Room", data);
+        },
+        buildYourClinicSelectBudget: function (data: any, sdkInstance: any): void {
+            sdkInstance.track("BYC_Select_budget", data);
+        },
+        buildYourClinicSelectTimeslot: function (data: any, sdkInstance: any): void {
+            sdkInstance.track("BYC_Select_Timeslot", data);
+        },
+        buildYourClinicSubmitRequest: function (data: any, sdkInstance: any): void {
+            sdkInstance.track("BYC_Submit_request", data);
         }
     }
 
