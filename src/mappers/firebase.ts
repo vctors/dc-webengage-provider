@@ -290,7 +290,34 @@ export class firebaseMapper implements IProviderMapper {
         },
         buildYourClinicSubmitRequest: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'BYC_Submit_request', data);
-        }
+        },
+        selectListFromHome: function (data: any, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'Select_Home_Mylist', data);
+        },
+        selectListFromAccount:function (data: any, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'Select_Acount_mylist', data);
+        },
+        createList:function (data: any, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'Create_List', data);
+        },
+        AddItemToMyList:function (data: any, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'Add_item_to_mylist', data);
+        },
+        chooseList: function (data: any, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'Check_list', data);
+        },
+        saveList: function (data: any, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'Save_to_list', data);
+        },
+        removeItemFromList:function (data: any, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'Remove_Item_from_list', data);
+        },
+        incrementQtyFromList:function (data: any, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'Increment_Qty_Mylist', data);
+        },
+        decrementQtyFromList: function (data: any, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'Decrement_Qty_Mylist', data);
+        },
     };
     contextMapper?: any;
 
