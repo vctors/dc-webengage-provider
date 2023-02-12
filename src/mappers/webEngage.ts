@@ -243,6 +243,8 @@ export class WebEngageMapper implements IProviderMapper {
         },
         decrementQtyFromList:function (data: any, sdkInstance: any): void {
         },
+        addListToCart:function (data: any, sdkInstance: any): void {
+        },
     }
 
 }
