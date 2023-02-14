@@ -318,6 +318,9 @@ export class firebaseMapper implements IProviderMapper {
         decrementQtyFromList: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Decrement_Qty_Mylist', data);
         },
+        addListToCart:function (data: any, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'Add_list_to_cart', data);
+        },
     };
     contextMapper?: any;
 
