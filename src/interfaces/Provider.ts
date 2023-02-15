@@ -1,6 +1,7 @@
 import IEventMapper, { IProviderMapper } from "./mapper";
 
 export default interface IProvider<sdkInstanceType> {
+    name: string,
     sdkInstance: sdkInstanceType,
     instantiateClient: () => any,
     // getInstance: () => sdkInstanceType;

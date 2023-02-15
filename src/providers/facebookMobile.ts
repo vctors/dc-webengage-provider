@@ -2,6 +2,7 @@ import { IProviderMapper } from "../interfaces/mapper";
 import IProvider from "../interfaces/Provider";
 import { facebookMobileMapper } from "../mappers/facebookMobile";
 import mapper from "../interfaces/mapper";
+import { PROVIDERS } from "../helpers";
 
 export default class FacebookMobileProvider implements IProvider<any>{
     private static instance: FacebookMobileProvider;
@@ -9,6 +10,7 @@ export default class FacebookMobileProvider implements IProvider<any>{
     constructor(sdkInstance: any) {
         this.sdkInstance = sdkInstance;
     }
+    public name: string = PROVIDERS.fbMobile;
     mapper: IProviderMapper = new facebookMobileMapper();
     public static getInstance(sdkInstance: any) {
         if (!FacebookMobileProvider.instance) {
