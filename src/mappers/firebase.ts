@@ -20,6 +20,7 @@ export class firebaseMapper implements IProviderMapper {
             logEvent(sdkInstance.analytics, 'add_to_cart', data);
         },
         removeFromCart: function (data: any, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'delete_product', data);
         },
         addToWishlist: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'add_to_wishlist', data);
@@ -36,8 +37,6 @@ export class firebaseMapper implements IProviderMapper {
             logEvent(sdkInstance.analytics, 'apply_promo', data);
         },
         couponFailed: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'remove_promo', data);
-
         },
         viewCart: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'view_cart', data);
@@ -124,7 +123,7 @@ export class firebaseMapper implements IProviderMapper {
             logEvent(sdkInstance.analytics, 'Delete_Product', data);
         },
         chekoutAddAddress: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'Chekout_Add_Address', data);
+            logEvent(sdkInstance.analytics, 'chekout_add_address', data);
         },
         checkoutVerifyAddress: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Checkout_verify_Address', data);
@@ -148,28 +147,28 @@ export class firebaseMapper implements IProviderMapper {
             logEvent(sdkInstance.analytics, 'View_account_settings', data);
         },
         viewAddressBook: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'View_address_book', data);
+            logEvent(sdkInstance.analytics, 'view_address_book', data);
         },
         saveNewAddress: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'Save_new_address', data);
+            logEvent(sdkInstance.analytics, 'save_new_address', data);
         },
         skipOTP: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'Skip_OTP', data);
+            logEvent(sdkInstance.analytics, 'skip_OTP', data);
         },
         resendOTP: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Resend_OTP', data);
         },
         confirmOTP: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'Confirm_OTP', data);
+            logEvent(sdkInstance.analytics, 'confirm_OTP', data);
         },
         verifyAddress: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'Verify_Address', data);
+            logEvent(sdkInstance.analytics, 'verify_address', data);
         },
         setDefaultAddress: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'Set_default_address', data);
+            logEvent(sdkInstance.analytics, 'set_default_address', data);
         },
         selectWishlist: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'Select_wishlist', data);
+            logEvent(sdkInstance.analytics, 'select_wishlist', data);
         },
         moveToCart: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Move_to_cart', data);
@@ -178,7 +177,7 @@ export class firebaseMapper implements IProviderMapper {
             logEvent(sdkInstance.analytics, 'Remove_wishlisted_product', data);
         },
         clearWishlist: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'Clear_wishlist', data);
+            logEvent(sdkInstance.analytics, 'clear_wishlist', data);
         },
         editProfile: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Edit_profile', data);
@@ -202,7 +201,7 @@ export class firebaseMapper implements IProviderMapper {
             logEvent(sdkInstance.analytics, 'Select_Currency', data);
         },
         userSignOut: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'User_sign_out', data);
+            logEvent(sdkInstance.analytics, 'user_sign_out', data);
         },
         selectBestseller: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Select_Bestseller', data);
@@ -294,13 +293,13 @@ export class firebaseMapper implements IProviderMapper {
         selectListFromHome: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Select_Home_Mylist', data);
         },
-        selectListFromAccount:function (data: any, sdkInstance: any): void {
+        selectListFromAccount: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Select_Acount_mylist', data);
         },
-        createList:function (data: any, sdkInstance: any): void {
+        createList: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Create_List', data);
         },
-        AddItemToMyList:function (data: any, sdkInstance: any): void {
+        AddItemToMyList: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Add_item_to_mylist', data);
         },
         chooseList: function (data: any, sdkInstance: any): void {
@@ -309,15 +308,18 @@ export class firebaseMapper implements IProviderMapper {
         saveList: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Save_to_list', data);
         },
-        removeItemFromList:function (data: any, sdkInstance: any): void {
+        removeItemFromList: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Remove_Item_from_list', data);
         },
-        incrementQtyFromList:function (data: any, sdkInstance: any): void {
+        incrementQtyFromList: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Increment_Qty_Mylist', data);
         },
         decrementQtyFromList: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Decrement_Qty_Mylist', data);
         },
+        removePromo: function (data: any, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'remove_promo', data);
+        }
     };
     contextMapper?: any;
 
