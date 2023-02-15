@@ -96,15 +96,16 @@ export default interface IEventMapper {
     buildYourClinicSelectBudget: (data: any, sdkInstance: any) => void
     buildYourClinicSelectTimeslot: (data: any, sdkInstance: any) => void
     buildYourClinicSubmitRequest: (data: any, sdkInstance: any) => void
-    selectListFromHome:(data: any, sdkInstance: any) => void
-    selectListFromAccount:(data: any, sdkInstance: any) => void
-    createList:(data: any, sdkInstance: any) => void
-    AddItemToMyList:(data: any, sdkInstance: any) => void
-    chooseList:(data: any, sdkInstance: any) => void
+    selectListFromHome: (data: any, sdkInstance: any) => void
+    selectListFromAccount: (data: any, sdkInstance: any) => void
+    createList: (data: any, sdkInstance: any) => void
+    AddItemToMyList: (data: any, sdkInstance: any) => void
+    chooseList: (data: any, sdkInstance: any) => void
     saveList: (data: any, sdkInstance: any) => void
-    removeItemFromList:(data: any, sdkInstance: any) => void
-    incrementQtyFromList:(data: any, sdkInstance: any) => void
-    decrementQtyFromList:(data: any, sdkInstance: any) => void
+    removeItemFromList: (data: any, sdkInstance: any) => void
+    incrementQtyFromList: (data: any, sdkInstance: any) => void
+    decrementQtyFromList: (data: any, sdkInstance: any) => void
+    removePromo: (data: any, sdkInstance: any) => void
     addListToCart:(data: any, sdkInstance: any) => void
 }
 export interface IProviderMapper {
