@@ -225,25 +225,27 @@ export class WebEngageMapper implements IProviderMapper {
         buildYourClinicSubmitRequest: function (data: any, sdkInstance: any): void {
             sdkInstance.track("BYC_Submit_request", data);
         },
-        selectListFromHome:function (data: any, sdkInstance: any): void {
+        selectListFromHome: function (data: any, sdkInstance: any): void {
         },
         selectListFromAccount: function (data: any, sdkInstance: any): void {
         },
-        createList:function (data: any, sdkInstance: any): void {
+        createList: function (data: any, sdkInstance: any): void {
         },
-        AddItemToMyList:function (data: any, sdkInstance: any): void {
+        AddItemToMyList: function (data: any, sdkInstance: any): void {
         },
-        chooseList:function (data: any, sdkInstance: any): void {
+        chooseList: function (data: any, sdkInstance: any): void {
         },
         saveList: function (data: any, sdkInstance: any): void {
         },
-        removeItemFromList:function (data: any, sdkInstance: any): void {
+        removeItemFromList: function (data: any, sdkInstance: any): void {
         },
-        incrementQtyFromList:function (data: any, sdkInstance: any): void {
+        incrementQtyFromList: function (data: any, sdkInstance: any): void {
         },
-        decrementQtyFromList:function (data: any, sdkInstance: any): void {
+        decrementQtyFromList: function (data: any, sdkInstance: any): void {
         },
-        addListToCart:function (data: any, sdkInstance: any): void {
+        removePromo: function (data: any, sdkInstance: any): void {
+        },
+        addListToCart: function (data: any, sdkInstance: any): void {
         },
     }
 
