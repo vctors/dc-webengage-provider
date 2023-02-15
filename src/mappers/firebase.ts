@@ -320,6 +320,9 @@ export class firebaseMapper implements IProviderMapper {
         removePromo: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'remove_promo', data);
         }
+        addListToCart:function (data: any, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'Add_list_to_cart', data);
+        },
     };
     contextMapper?: any;
 

@@ -245,6 +245,8 @@ export class WebEngageMapper implements IProviderMapper {
         },
         removePromo: function (data: any, sdkInstance: any): void {
         }
+        addListToCart:function (data: any, sdkInstance: any): void {
+        },
     }
 
 }

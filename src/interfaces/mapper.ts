@@ -106,6 +106,7 @@ export default interface IEventMapper {
     incrementQtyFromList: (data: any, sdkInstance: any) => void
     decrementQtyFromList: (data: any, sdkInstance: any) => void
     removePromo: (data: any, sdkInstance: any) => void
+    addListToCart:(data: any, sdkInstance: any) => void
 }
 export interface IProviderMapper {
     eventMapper: IEventMapper,
