@@ -10,9 +10,7 @@ export class facebookMobileMapper implements IProviderMapper {
         bannerClicked: function (data: { event_time: any; user_id: number; storefront_id: number; banner_id: number; platform_type: string; }, sdkInstance: any): void {
         },
         productViewed: function (data: { product_id: string; event_time: any; storefront_id: number; product_name: string; category_name: string; category_id: number; sub_category_name: string; sub_category_id: number; brand: string; retail_price: number; discount: number; price: number; currency: any; image: any; platform_type: string; }, sdkInstance: any): void {
-            console.log("FB-E-1", sdkInstance);
             sdkInstance.logEvent(sdkInstance.AppEvents.ViewedContent, data);
-
         },
         addToCart: function (data: any, sdkInstance: any): void {
         },
@@ -219,7 +217,6 @@ export class facebookMobileMapper implements IProviderMapper {
         addListToCart: function (data: any, sdkInstance: any): void {
         },
         purchase: function (data: any, sdkInstance: any): void {
-            console.log("FB-E-2", sdkInstance);
             sdkInstance.logPurchase(data.amount, data.currency, data.params);
         }
     };
