@@ -11,3 +11,10 @@ export function formatEventData(data: any, nested = false, constructedObject: an
     };
     return object;
 }
+export enum PROVIDERS {
+    wegMobile = "webengageMobile",
+    wegWeb = "webengageWeb",
+    firebaseMobile = "firebaseMobile",
+    firebaseWeb = "firebaseWeb",
+    fbMobile = "facebookMobile",
+}

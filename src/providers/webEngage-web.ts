@@ -1,3 +1,4 @@
+import { PROVIDERS } from "../helpers";
 import mapper, { IProviderMapper } from "../interfaces/mapper";
 import IProvider from "../interfaces/Provider";
 import { WebEngageMapper } from "../mappers/webEngage";
@@ -9,6 +10,7 @@ export default class WebEngageWebProvider implements IProvider<any>{
     constructor(sdkObject: any) {
         this.sdkInstance = sdkObject;
     }
+    public name: string = PROVIDERS.wegWeb;
     public static getInstance(sdkObject: any) {
         if (!WebEngageWebProvider.instance) {
             WebEngageWebProvider.instance = new WebEngageWebProvider(sdkObject)
