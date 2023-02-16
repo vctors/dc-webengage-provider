@@ -1,4 +1,5 @@
 import FirebaseInstance, { IFirebaseConfig } from "../firebase";
+import { PROVIDERS } from "../helpers";
 import mapper, { IProviderMapper } from "../interfaces/mapper";
 import IProvider from "../interfaces/Provider";
 import { firebaseMapper } from "../mappers/firebase";
@@ -12,6 +13,7 @@ export default class FirebaseProvider implements IProvider<any> {
         this.config = firebaseConfig;
         this.sdkInstance = new FirebaseInstance(firebaseConfig);
     }
+    public name: string = PROVIDERS.firebaseWeb;
     mapper: IProviderMapper = new firebaseMapper();
     public instantiateClient() {
         this.sdkInstance = new FirebaseInstance(this.config);

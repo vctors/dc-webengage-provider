@@ -1,5 +1,5 @@
 import WebEngage from "react-native-webengage";
-import { formatEventData } from "../helpers";
+import { formatEventData, PROVIDERS } from "../helpers";
 import mapper, { IProviderMapper } from "../interfaces/mapper";
 import IProvider from "../interfaces/Provider";
 import { WebEngageMapper } from "../mappers/webEngage";
@@ -12,6 +12,7 @@ export default class WebEngageProvider implements IProvider<typeof WebEngage> {
     constructor() {
         this.sdkInstance = new WebEngage();
     }
+    public name: string = PROVIDERS.wegMobile;
     mapper: IProviderMapper = new WebEngageMapper();
     public instantiateClient() {
         this.sdkInstance = new WebEngage();
