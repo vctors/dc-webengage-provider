@@ -216,6 +216,8 @@ export class facebookMobileMapper implements IProviderMapper {
         },
         addListToCart: function (data: any, sdkInstance: any): void {
         },
+        createListFromProductDetailsPage: function (data: any, sdkInstance: any): void {
+        },
         purchase: function (data: any, sdkInstance: any): void {
             sdkInstance.logPurchase(data.amount, data.currency, data.params);
         }
