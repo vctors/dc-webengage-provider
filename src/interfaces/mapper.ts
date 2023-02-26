@@ -86,6 +86,7 @@ export default interface IEventMapper {
     orderHelp: (data: any, sdkInstance: any) => void,
     trackOrder: (data: any, sdkInstance: any) => void,
     inlineSearch: (data: any, sdkInstance: any) => void,
+    inlineSearchClick: (data: any, sdkInstance: any) => void,
     fullSearch: (data: any, sdkInstance: any) => void,
     profileUpdated: (data: any, sdkInstance: any) => void,
     claimCode: (data: any, sdkInstance: any) => void,

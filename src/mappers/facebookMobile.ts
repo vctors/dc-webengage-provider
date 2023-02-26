@@ -174,6 +174,8 @@ export class facebookMobileMapper implements IProviderMapper {
         },
         inlineSearch: function (data: any, sdkInstance: any): void {
         },
+        inlineSearchClick: function (data: any, sdkInstance: any): void {
+        },
         fullSearch: function (data: any, sdkInstance: any): void {
         },
         profileUpdated: function (data: any, sdkInstance: any): void {
