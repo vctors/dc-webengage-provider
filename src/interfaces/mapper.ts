@@ -107,8 +107,12 @@ export default interface IEventMapper {
     decrementQtyFromList: (data: any, sdkInstance: any) => void
     removePromo: (data: any, sdkInstance: any) => void
     addListToCart: (data: any, sdkInstance: any) => void
-    createListFromProductDetailsPage:(data: any, sdkInstance: any) => void
+    createListFromProductDetailsPage: (data: any, sdkInstance: any) => void
     purchase: (data: any, sdkInstance: any) => void
+    // FDC Campaign Events
+    selectFdcHomeBanner: (data: any, skInstance: any) => void
+    addFdcCampaignItemToCart: (data: any, sdkInstance: any) => void
+    addHomeFdcCampaignItemToCart: (data: any, sdkInstance: any) => void
 }
 export interface IProviderMapper {
     eventMapper: IEventMapper,

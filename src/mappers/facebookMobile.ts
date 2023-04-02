@@ -220,6 +220,12 @@ export class facebookMobileMapper implements IProviderMapper {
         },
         purchase: function (data: any, sdkInstance: any): void {
             sdkInstance.logPurchase(data.amount, data.currency, data.params);
+        },
+        selectFdcHomeBanner: function (data: any, skInstance: any): void {
+        },
+        addFdcCampaignItemToCart: function (data: any, sdkInstance: any): void {
+        },
+        addHomeFdcCampaignItemToCart: function (data: any, sdkInstance: any): void {
         }
     };
 }
