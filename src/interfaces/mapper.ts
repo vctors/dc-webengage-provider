@@ -86,6 +86,7 @@ export default interface IEventMapper {
     orderHelp: (data: any, sdkInstance: any) => void,
     trackOrder: (data: any, sdkInstance: any) => void,
     inlineSearch: (data: any, sdkInstance: any) => void,
+    inlineSearchClick: (data: any, sdkInstance: any) => void,
     fullSearch: (data: any, sdkInstance: any) => void,
     profileUpdated: (data: any, sdkInstance: any) => void,
     claimCode: (data: any, sdkInstance: any) => void,
@@ -107,8 +108,12 @@ export default interface IEventMapper {
     decrementQtyFromList: (data: any, sdkInstance: any) => void
     removePromo: (data: any, sdkInstance: any) => void
     addListToCart: (data: any, sdkInstance: any) => void
-    createListFromProductDetailsPage:(data: any, sdkInstance: any) => void
+    createListFromProductDetailsPage: (data: any, sdkInstance: any) => void
     purchase: (data: any, sdkInstance: any) => void
+    // FDC Campaign Events
+    selectFdcHomeBanner: (data: any, skInstance: any) => void
+    addFdcCampaignItemToCart: (data: any, sdkInstance: any) => void
+    addHomeFdcCampaignItemToCart: (data: any, sdkInstance: any) => void
 }
 export interface IProviderMapper {
     eventMapper: IEventMapper,

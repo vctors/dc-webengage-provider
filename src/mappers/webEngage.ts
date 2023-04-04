@@ -199,6 +199,8 @@ export class WebEngageMapper implements IProviderMapper {
         },
         inlineSearch: function (data: any, sdkInstance: any): void {
         },
+        inlineSearchClick: function (data: any, sdkInstance: any): void {
+        },
         fullSearch: function (data: any, sdkInstance: any): void {
         },
         profileUpdated: function (data: any, sdkInstance: any): void {
@@ -250,6 +252,12 @@ export class WebEngageMapper implements IProviderMapper {
         createListFromProductDetailsPage: function (data: any, sdkInstance: any): void {
         },
         purchase: function (data: any, sdkInstance: any): void {
+        },
+        selectFdcHomeBanner: function (data: any, skInstance: any): void {
+        },
+        addFdcCampaignItemToCart: function (data: any, sdkInstance: any): void {
+        },
+        addHomeFdcCampaignItemToCart: function (data: any, sdkInstance: any): void {
         }
     }
 

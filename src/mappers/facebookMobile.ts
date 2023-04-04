@@ -174,6 +174,8 @@ export class facebookMobileMapper implements IProviderMapper {
         },
         inlineSearch: function (data: any, sdkInstance: any): void {
         },
+        inlineSearchClick: function (data: any, sdkInstance: any): void {
+        },
         fullSearch: function (data: any, sdkInstance: any): void {
         },
         profileUpdated: function (data: any, sdkInstance: any): void {
@@ -220,6 +222,12 @@ export class facebookMobileMapper implements IProviderMapper {
         },
         purchase: function (data: any, sdkInstance: any): void {
             sdkInstance.logPurchase(data.amount, data.currency, data.params);
+        },
+        selectFdcHomeBanner: function (data: any, skInstance: any): void {
+        },
+        addFdcCampaignItemToCart: function (data: any, sdkInstance: any): void {
+        },
+        addHomeFdcCampaignItemToCart: function (data: any, sdkInstance: any): void {
         }
     };
 }
