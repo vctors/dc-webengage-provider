@@ -35,7 +35,7 @@ export default class FirebaseProvider implements IProvider<any> {
         this.sendUserContext(data);
     }
     public sendUserContext(data: any, nested = false, constructedObject: any = undefined) {
-
+        this.sdkInstance.setUserContext(data);
     }
     public sendEvent(eventName: string, eventData: any) {
         Object.keys(this.mapper.eventMapper).includes(eventName) ? this.mapper.eventMapper[eventName as keyof mapper](eventData, this.sdkInstance) : "";
