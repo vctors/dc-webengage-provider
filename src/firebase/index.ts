@@ -1,5 +1,5 @@
 import { FirebaseApp, initializeApp } from "firebase/app";
-import { Analytics, getAnalytics } from "firebase/analytics";
+import { Analytics, getAnalytics, setUserProperties } from "firebase/analytics";
 
 export interface IFirebaseConfig {
     apiKey: string,
@@ -26,6 +26,9 @@ export default class FirebaseInstance {
             FirebaseInstance.instance = new FirebaseInstance(config);
         }
         return FirebaseInstance.instance;
+    }
+    public setUserContext(data: any) {
+        setUserProperties(this.analytics, data);
     }
 
 }
