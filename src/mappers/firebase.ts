@@ -330,6 +330,7 @@ export class firebaseMapper implements IProviderMapper {
             logEvent(sdkInstance.analytics, 'Create_List_from_product', data);
         },
         purchase: function (data: any, sdkInstance: any): void {
+            logEvent(sdkInstance.analytics, 'purchase', data);
         },
         selectFdcHomeBanner: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Select_Home_FDC_Campaign', data);
