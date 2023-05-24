@@ -264,7 +264,7 @@ export class firebaseMapper implements IProviderMapper {
             logEvent(sdkInstance.analytics, 'Full_Search', data);
         },
         inlineSearchClick: function (data: any, sdkInstance: any): void {
-            logEvent(sdkInstance.analytics, 'Inline_Search_Click', data);
+            logEvent(sdkInstance.analytics, 'Inline_search_Click', data);
         },
         profileUpdated: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Profile_Updated', data);
