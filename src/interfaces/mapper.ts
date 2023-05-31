@@ -114,6 +114,7 @@ export default interface IEventMapper {
     selectFdcHomeBanner: (data: any, skInstance: any) => void
     addFdcCampaignItemToCart: (data: any, sdkInstance: any) => void
     addHomeFdcCampaignItemToCart: (data: any, sdkInstance: any) => void
+    selectSimilarProduct:(data: any, sdkInstance: any) => void
 }
 export interface IProviderMapper {
     eventMapper: IEventMapper,

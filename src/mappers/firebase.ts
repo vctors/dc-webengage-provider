@@ -341,6 +341,9 @@ export class firebaseMapper implements IProviderMapper {
         },
         addHomeFdcCampaignItemToCart: function (data: any, sdkInstance: any): void {
             logEvent(sdkInstance.analytics, 'Add_home_FDC_Campaign_Item', data);
+        },
+        selectSimilarProduct:function (data: any, sdkInstance: any): void{
+            logEvent(sdkInstance.analytics, 'View_Similar_Product', data);
         }
     };
     contextMapper?: any;
