@@ -228,6 +228,8 @@ export class facebookMobileMapper implements IProviderMapper {
         addFdcCampaignItemToCart: function (data: any, sdkInstance: any): void {
         },
         addHomeFdcCampaignItemToCart: function (data: any, sdkInstance: any): void {
+        },
+        selectSimilarProduct:function (data: any, sdkInstance: any): void{
         }
     };
 }
