@@ -344,7 +344,13 @@ export class firebaseMapper implements IProviderMapper {
         },
         selectSimilarProduct:function (data: any, sdkInstance: any): void{
             logEvent(sdkInstance.analytics, 'View_Similar_Product', data);
-        }
+        },
+        selectItemsToCancel:function (data: any, sdkInstance: any): void{
+            logEvent(sdkInstance.analytics, 'Select_items_to_cancel', data);
+        },
+        decrementToCancelItemQuantity:function (data: any, sdkInstance: any): void{
+            logEvent(sdkInstance.analytics, 'Decrement_to_Cancel_Item_Qty', data);
+        },
     };
     contextMapper?: any;
 

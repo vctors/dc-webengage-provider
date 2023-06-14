@@ -260,7 +260,11 @@ export class WebEngageMapper implements IProviderMapper {
         addHomeFdcCampaignItemToCart: function (data: any, sdkInstance: any): void {
         },
         selectSimilarProduct:function (data: any, sdkInstance: any): void{
-        }
+        },
+        selectItemsToCancel:function (data: any, sdkInstance: any): void{
+        },
+        decrementToCancelItemQuantity:function (data: any, sdkInstance: any): void{
+        },
     }
 
 }
