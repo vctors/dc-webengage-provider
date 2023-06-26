@@ -1,6 +1,6 @@
 {
   "name": "@dentacarts/dc-webengage-provider",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "A Simple WebEngage Provider",
   "main": "index.js",
   "scripts": {
