@@ -265,6 +265,10 @@ export class WebEngageMapper implements IProviderMapper {
         },
         decrementToCancelItemQuantity:function (data: any, sdkInstance: any): void{
         },
+        rateProductFromToaster:function (data: any, sdkInstance: any): void{
+        },
+        rateProduct:function (data: any, sdkInstance: any): void{
+        }
     }
 
 }
