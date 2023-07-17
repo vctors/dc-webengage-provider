@@ -356,7 +356,16 @@ export class firebaseMapper implements IProviderMapper {
         },
         rateProduct:function (data: any, sdkInstance: any): void{
             logEvent(sdkInstance.analytics, 'Product_Rating', data);
-        }
+        },
+        reviewProductFromProductDetails:function(data: any, sdkInstance: any): void{
+            logEvent(sdkInstance.analytics, 'Product_Review_model', data);
+        },
+        searchHistoryClick:function(data: any, sdkInstance: any): void{
+            logEvent(sdkInstance.analytics, 'Search_History_Click', data);
+        },
+        selectRecommendedProduct:function(data: any, sdkInstance: any): void{
+            logEvent(sdkInstance.analytics, 'View_recommended_Product', data);
+        },
     };
     contextMapper?: any;
 

@@ -238,6 +238,12 @@ export class facebookMobileMapper implements IProviderMapper {
         rateProductFromToaster:function(data: any, sdkInstance: any): void{
         },
         rateProduct:function(data: any, sdkInstance: any): void{
-        }
+        },
+        reviewProductFromProductDetails:function(data: any, sdkInstance: any): void{
+        },
+        searchHistoryClick:function(data: any, sdkInstance: any): void{
+        },
+        selectRecommendedProduct:function(data: any, sdkInstance: any): void{
+        },
     };
 }

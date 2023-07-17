@@ -119,6 +119,9 @@ export default interface IEventMapper {
     decrementToCancelItemQuantity: (data: any, sdkInstance: any) => void
     rateProductFromToaster: (data: any, sdkInstance: any) => void
     rateProduct:(data:any,sdkInstance:any)=>void
+    reviewProductFromProductDetails:(data:any,sdkInstance:any)=>void
+    searchHistoryClick:(data:any,sdkInstance:any)=>void
+    selectRecommendedProduct:(data:any,sdkInstance:any)=>void
 }
 export interface IProviderMapper {
     eventMapper: IEventMapper,
