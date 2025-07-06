@@ -1,8 +1,9 @@
 {
-  "name": "@dentacarts/dc-webengage-provider",
-  "version": "1.1.10",
+  "name": "@vctors/dc-webengage-provider",
+  "version": "1.1.11",
   "description": "A Simple WebEngage Provider",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
@@ -10,25 +11,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dentacarts/dc-webengage-provider.git"
+    "url": "git+https://github.com/vctors/dc-webengage-provider.git"
   },
   "keywords": [
     "\\integrations"
   ],
-  "author": "Abdelrahman Shalaby",
+  "author": "vctors",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dentacarts/dc-webengage-provider/issues"
+    "url": "https://github.com/vctors/dc-webengage-provider/issues"
   },
-  "homepage": "https://github.com/dentacarts/dc-webengage-provider#readme",
+  "homepage": "https://github.com/vctors/dc-webengage-provider#readme",
   "dependencies": {
     "firebase": "^9.10.0",
     "react-native-webengage": "^1.3.0"
   },
   "publishConfig": {
-    "@dentacarts:registry": "https://npm.pkg.github.com"
+    "@vctors:registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
+    "@types/node": "^24.0.10",
     "typescript": "^4.8.3"
   }
 }
